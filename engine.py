@@ -11,10 +11,16 @@ def hex_to_rgb(hex_code):
 def create_ascii_art(text, font_name, font_size, aspect, charset, color_start, color_end, direction, shadow=False, shadow_offset_x=2, shadow_offset_y=1, letter_spacing=0, line_spacing=0):
     try:
         try:
-            font_path = utils.get_font_path(font_name)
+            # もし font_name 自体が有効なパスならそのまま使う
+            if os.path.exists(font_name):
+                font_path = font_name
+            else:
+                font_path = utils.get_font_path(font_name)
+            
             if font_path and os.path.exists(font_path):
                 font = ImageFont.truetype(font_path, font_size)
             else:
+                # 最終フォールバック。ここでNullだと英語しか出ない
                 font = ImageFont.load_default()
         except Exception as e:
             utils.log_error(f"Font load error ({font_name}): {e}")
@@ -192,7 +198,7 @@ def create_ascii_art(text, font_name, font_size, aspect, charset, color_start, c
         canvas_w = final_w * char_w
         canvas_h = final_h * char_h
         
-        out_img = Image.new("RGB", (canvas_w, canvas_h), (30, 30, 30))
+        out_img = Image.new("RGBA", (canvas_w, canvas_h), (0, 0, 0, 0))
         out_draw = ImageDraw.Draw(out_img)
         
         for y, row in enumerate(final_data):
