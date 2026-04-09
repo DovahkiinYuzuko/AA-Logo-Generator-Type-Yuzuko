@@ -19,3 +19,22 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+Third-Party Software Notices
+This software links to or uses the following third-party libraries, which are subject to their respective licenses:
+
+Pillow (HPND License)
+Copyright © 2010-2024 by Jeffrey A. Clark and contributors
+
+matplotlib (PSF-based License)
+Copyright © 2002-2024 John Hunter, Darren Dale, Eric Firing, Michael Droettboom and the Matplotlib development team
+
+customtkinter (MIT License)
+Copyright © 2021 Tom Schimansky
+
+pyperclip (BSD 3-Clause License)
+Copyright © 2013 Al Sweigart
+
+nuitka (Apache License 2.0)
+Copyright © 2026 Kay Hayen and contributors
